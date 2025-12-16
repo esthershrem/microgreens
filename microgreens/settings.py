@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # TEMPLATES[0]['DIRS'] = [BASE_DIR / 'templates']
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATICFILES_DIRS = [BASE_DIR / 'theme' / 'static']
 TAILWIND_APP_NAME = 'theme'
 
 MEDIA_URL = '/media/'
