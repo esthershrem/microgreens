@@ -1,0 +1,24 @@
+{% if icon == "mild" %}
+  <!-- Leaf -->
+  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path d="M11 21C11 21 4 14 4 8a6 6 0 0112 0c0 6-7 13-7 13z"/>
+  </svg>
+
+{% elif icon == "spicy" %}
+  <!-- Flame -->
+  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path d="M12 2s4 4 4 9a4 4 0 01-8 0c0-5 4-9 4-9z"/>
+  </svg>
+
+{% elif icon == "fresh" %}
+  <!-- Wind -->
+  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path d="M3 12h13a3 3 0 100-6"/>
+  </svg>
+
+{% elif icon == "premium" %}
+  <!-- Star -->
+  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/>
+  </svg>
+{% endif %}

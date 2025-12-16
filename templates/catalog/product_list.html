@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-semibold text-gray-900 mb-2">
+        Nuestro Catálogo
+      </h2>
+      <p class="text-lg text-gray-600">
+        Explora nuestra selección de microgreens frescos y cultivados localmente
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for product in products %}
+        <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
+          <div class="bg-gray-50 flex items-center justify-center h-56">
+          {% if product.image %}
+            <img
+              src="{{ product.image.url }}"
+              alt="{{ product.name }}"
+              class="w-full h-48 object-cover"
+            >
+          {% endif %}
+          </div>
+          <!-- Header row -->
+          <div class="flex items-start justify-between mb-2">
+            <h3 class="text-lg font-semibold text-gray-900">
+              {{ product.name }}
+            </h3>
+            <span class="text-green-600 font-semibold whitespace-nowrap">
+              ${{ product.price }}/lb
+            </span>
+          </div>
+
+          <!-- Flavor row -->
+          {% if product.icon_type %}
+          <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+            {% include "components/icons.html" with icon=product.icon_type %}
+            <span>{{ product.get_icon_type_display }}</span>
+          </div>
+          {% endif %}
+
+          <!-- Description -->
+          <p class="text-gray-600 text-sm leading-relaxed">
+            {{ product.description }}
+          </p>
+
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endblock %}
